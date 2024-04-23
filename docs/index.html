@@ -20,7 +20,8 @@
     <!-- link docsify-dark-switch.css  -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-switch/dist/docsify-dark-switch.css">
 
-    <!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">   -->
+    <!-- 评论系统-->
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
 <style type="text/css">
     body {
@@ -162,7 +163,19 @@
     <script src="https://unpkg.com/docsify-copy-code"></script>
     <!-- docsify-tabs实现标签功能 (latest v1.x.x) -->
     <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        const gitalk = new Gitalk({
+            clientID: '3ac6293022ede4f40088',
+            clientSecret: 'e1e30fe5b27c7b0b7eafcc3b904f3edf4a7a9ffd',
+            repo: 'https://github.com/zhanghanjiao-timis/zhanghanjiao-blogs',
+            owner: 'zhanghanjiao',
+            admin: ['zhanghanjiao'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+    </script>
 </body>
 
 </html>
