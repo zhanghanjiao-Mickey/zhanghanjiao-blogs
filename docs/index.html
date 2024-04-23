@@ -129,6 +129,13 @@
                 errorText: 'Error',
                 successText: 'Copied',
             },
+            tabs: {
+                persist: true, // default
+                sync: true, // default
+                theme: 'classic', // default
+                tabComments: true, // default
+                tabHeadings: true // default
+            },
         }
     </script>
     <!-- Docsify v4 -->
@@ -153,6 +160,9 @@
     <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
     <!-- 代码复制功能 (not recommended for production) -->
     <script src="https://unpkg.com/docsify-copy-code"></script>
+    <!-- docsify-tabs实现标签功能 (latest v1.x.x) -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+
 </body>
 
 </html>
