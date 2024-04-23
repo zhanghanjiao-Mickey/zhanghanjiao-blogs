@@ -18,7 +18,7 @@
     <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"> -->
 
     <!-- link docsify-dark-switch.css  -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-switch/dist/docsify-dark-switch.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-switch/dist/docsify-dark-switch.css">
 
     <!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">   -->
 </head>
@@ -43,7 +43,7 @@
             // 开启侧边栏，需要目录下有_sidebar.md文件
             loadSidebar: true,
             // 读取md文件中最大几级目录
-            subMaxLevel: 2,
+            subMaxLevel: 1,
             // 切换页面后跳回页面顶部,问题：使用了这个之后，切换标题的时候会自动滑动到顶部
             // auto2top: true,
             // 指定开始页
@@ -51,7 +51,7 @@
             //开启封面页，需要目录下有_coverpage.md文件
             coverpage: true,
             // 封面和内容单独显示
-            onlyCover:true,
+            onlyCover: true,
             // 侧边栏左侧的logo
             logo: '',
             // 侧边栏顶部的标题
@@ -95,8 +95,8 @@
             },
             // 分页导航插件
             pagination: {
-                previousText: '上一卷',
-                nextText: '下一卷',
+                previousText: '上一章节',
+                nextText: '下一章节',
                 crossChapter: true,
                 crossChapterText: true
             },
@@ -145,6 +145,7 @@
     <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
     <!-- 页脚信息 -->
     <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
+
 </body>
 
 </html>
