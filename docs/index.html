@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">   -->
 </head>
+<style type="text/css">
+    body {
+        /* 出现滚轮！！！（这十分重要），困扰了我一个晚上，为什么页面不能滑动 */
+      overflow: auto !important;
+    }
+  </style>
 <body>
     <!-- 定义加载时的显示 -->
     <div id="app">Mickey~Mickey~请稍等！！</div>
@@ -25,8 +31,8 @@
             loadSidebar: true,
             // 读取md文件中最大几级目录
             subMaxLevel: 2,
-            // 切换页面后跳回页面顶部
-            auto2top: true,
+            // 切换页面后跳回页面顶部,问题：使用了这个之后，切换标题的时候会自动滑动到顶部
+            // auto2top: true,
             // 指定开始页
             // homepage: '_home.md',
             //开启封面页，需要目录下有_coverpage.md文件
@@ -40,7 +46,7 @@
             // 禁用emoji
             noEmoji: true,
             // 移动设备合并导航栏到侧边栏
-            mergeNavbar: true,
+            // mergeNavbar: true,
             // 加载_404.md
             notFoundPage: true,
             // 滚动到锚点是与顶部的距离
