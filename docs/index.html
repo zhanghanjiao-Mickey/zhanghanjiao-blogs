@@ -76,7 +76,7 @@
                 noData: '找不到结果',
                 depth: 4,
                 hideOtherSidebarContent: false,
-                namespace: '邓邓的零食橱'
+                namespace: 'timis'
             },
             // 字数插件
             count: {
@@ -119,15 +119,18 @@
             sidebarDisplayLevel: 2,
             // 页脚信息插件
             loadFooter: true,
-            loadFooter: '_footer.md'
+            loadFooter: '_footer.md',
+            // 自动为每个页面增加标题
+            loadSidebar: true,
+            autoHeader: true,
         }
     </script>
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-    <!-- docsify的js依赖 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <!-- docsify的js依赖 --,启用了之后会重新生成一个搜索框>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
     <!-- 修改主题插件  -->
-<script src="//cdn.jsdelivr.net/npm/docsify-dark-switch/dist/docsify-dark-switch.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-dark-switch/dist/docsify-dark-switch.min.js"></script>
     <!-- 搜索 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <!-- 图片放大缩小支持 -->
