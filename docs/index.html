@@ -167,7 +167,8 @@
     <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
     <script>
         // title_id需要初始化
-        // window.title_id = window.location.hash.match(/#(.*?)([?]|$)/) ? window.location.hash.match(/#(.*?)([?]|$)/)[1] : '/';   
+        // window.title_id = window.location.hash.match(/#(.*?)([?]|$)/) ? window.location.hash.match(/#(.*?)([?]|$)/)[1] : '/';  
+        var title = location.pathname.substr(0, 50);  
         const gitalk = new Gitalk({
             clientID: '56b1f81f70f5020faf84',
             clientSecret: '2ff39ba0699d9bc87e0ac5c48550fb0f38c628e0',
@@ -176,13 +177,8 @@
             admin: ['zhanghanjiao-timis'],
             distractionFreeMode: false,
             title: `Document comment ${location.hash.match(/#(.*?)([?]|$)/)[1]}`,
-            id: location.hash.match(/#(.*?)([?]|$)/)[1],  // 存放评论的仓库
+            id: title
         })
-        window.onhashchange = function (event) {
-            if (event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
-                location.reload()
-            }
-        }
     </script>
 </body>
 
