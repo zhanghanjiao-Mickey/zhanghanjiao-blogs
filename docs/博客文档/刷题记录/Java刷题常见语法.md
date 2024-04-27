@@ -1,9 +1,10 @@
 # 常用数据结构
-下面是按照您提供的内容，转换成 Markdown 格式的文本：
 
 ---
 
 ## List
+
+---
 
 ### ArrayList: 数组实现
 
@@ -26,6 +27,8 @@ num.isEmpty();
 
 ## Queue: 推荐使用LinkedList初始化
 
+---
+
 ```java
 Queue<Integer> queue = new LinkedList<>();
 // 添加元素到队尾
@@ -39,6 +42,8 @@ queue.peek();
 ```
 
 ## Deque: 推荐使用LinkedList初始化
+
+---
 
 Deque接口从Queue扩展, Queue的API也可以用
 
@@ -62,6 +67,8 @@ deque.getLast();
 ```
 
 ## LinkedList: 双向链表实现
+
+---
 
 可作为List, Deque, Queue
 
@@ -100,6 +107,8 @@ public List<Integer> convert(int[] n){
 
 ## PriorityQueue
 
+---
+
 用小顶堆实现，每次取出最小值，poll()复杂度为O(1)，add(Obj)复杂度为O(log(N))
 
 ```java
@@ -122,6 +131,8 @@ pq.remove();
 ```
 
 ## Map
+
+---
 
 基本单元为Entry, 包含一个键值对
 
@@ -166,6 +177,8 @@ Collections.sort(list, (o1, o2) -> o1.getValue() - o2.getValue());
 
 ## Set
 
+---
+
 基于哈希表实现
 
 ```
@@ -186,7 +199,11 @@ Set set = new HashSet((o1, o2) -> o2 - o1);
 
 # 基础
 
+---
+
 ## 输入输出
+
+---
 
 ``` Java
 Scanner in=new Scann(System.in);
@@ -199,12 +216,16 @@ String n=inBufferedReader.readLine();
 
 ## StringBuilder
 
+---
+
 ```Java
 StringBuilder stringBuilder = new StringBuilder();
 stringBuilder.setCharAt(0, 's');
 ```
 
 ## 类型转换
+
+---
 
 ```Java
 //Stinrg类型转换成int；其他同理
@@ -213,6 +234,8 @@ Integer.parseInt(string);
 ```
 
 ## list转换为int数组
+
+---
 
 ```Java
 List<int[]> list = new ArrayList<>();
@@ -224,6 +247,8 @@ list.toArray(new int[list.size()][2])
 
 ## ArrayList方法
 
+---
+
 ``` Java
 List<Integer> res=new ArrayList();
 res.clear();//清空元素内容。
@@ -232,6 +257,8 @@ Collections.reverse(res) //将动态数组元素内容逆序。
 
 ## 最大值最小值
 
+---
+
 ```Java
 Long同理
 max = Integer.MAX_VALUE;
@@ -239,6 +266,8 @@ min = Integer.MIN_VALUE;
 ```
 
 ## String
+
+---
 
 ```Java
 String s="xxxx";
@@ -257,7 +286,11 @@ String[]ss=s.split("regex");
 
 # 集合
 
+---
+
 ## HashMap
+
+---
 
 ``` Java
 //HashMap
@@ -295,6 +328,8 @@ map.getOrDefault(k,defaultValue); 没有k值，设置为默认值。有k值，�
 
 ## 队列&栈
 
+---
+
 ``` Java
 Queue<Integer> q = new LinkedList<>(); 
  q.peek();
@@ -318,6 +353,8 @@ stack.size();
 
 ## 按照指定位置排序
 
+---
+
 ```Java
 //一种简单做法是通过Arrays.sort()传入新的Compartor对象；来实现按照指定序列排序；比如我们想实现二维数组，按照第一列升序，第二列降序
   Arrays.sort(arr, new Comparator<int[]>()
@@ -337,6 +374,8 @@ stack.size();
 
 # 输出
 
+---
+
 ``` Java
             System.out.println(String.format("%.6f",((s-1)/n)*100));//保留6位小数 四舍五入
 
@@ -344,7 +383,11 @@ stack.size();
 
 # 其他
 
+---
+
 ## 字符串加法
+
+---
 
 ``` Java
   public static void main(String[] args){
@@ -362,13 +405,19 @@ stack.size();
 
 ## 向上取整，向下取整
 
+---
+
 java m/n向下取整 m+n-1/n向上取整
 
 ## 数组填充指定数字
 
+---
+
 Arrays.fill(nums,number)填充数组指定值
 
 ## 求最大公约数
+
+---
 
 ``` Java
 public static int gcd(int m, int n) {
@@ -378,12 +427,16 @@ public static int gcd(int m, int n) {
 
 ## 使用javaStream求和
 
+---
+
 ```Java
  int sumA = Arrays.stream(A).sum();
  int sumB = Arrays.stream(B).sum();
 ```
 
 ## 优先级队列构造
+
+---
 
 ``` Java
   PriorityQueue<Integer> minQueue = new PriorityQueue<>(Comparator.naturalOrder());
@@ -401,11 +454,15 @@ public static int gcd(int m, int n) {
 
 ## 随机数
 
+---
+
 ``` Java
     int random= new Random().nextInt(n);生成0到 n之间的正数。[0,n];
 ```
 
 ## list转普通数组
+
+---
 
 ```
     List<int[]> list = new ArrayList();
