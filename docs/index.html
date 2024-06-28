@@ -1,185 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>张涵姣的个人博客</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="Description">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
-    <!-- 主题 -->
-    <link rel="stylesheet" title="light" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-    <link rel="stylesheet" title="dark" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css">
-    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/buble.css"> -->
-    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"> -->
-    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css"> -->
-    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/pure.css"> -->
-    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"> -->
-
-    <!-- link docsify-dark-switch.css  -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-switch/dist/docsify-dark-switch.css">
-
-    <!-- 评论系统-->
-    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-</head>
-<style type="text/css">
-    body {
-        /* 出现滚轮！！！（这十分重要），困扰了我一个晚上，为什么页面不能滑动 */
-        overflow: auto !important;
-    }
-</style>
-
-<body>
-    <!-- 定义加载时的显示 -->
-    <div id="app">Mickey~Mickey~请稍等！！</div>
-    <script>
-        window.$docsify = {
-            name: '',
-            repo: 'https://zhanghanjiao-timis.github.io/zhanghanjiao-blogs/#/',
-            //通用设置
-            // -----------------------------------------------------
-            // 加载自定义导航栏,需要目录下有_navbar.md文件
-            // loadNavbar: true,
-            // 开启侧边栏，需要目录下有_sidebar.md文件
-            loadSidebar: true,
-            // 读取md文件中最大几级目录
-            subMaxLevel: 1,
-            // 切换页面后跳回页面顶部,问题：使用了这个之后，切换标题的时候会自动滑动到顶部
-            // auto2top: true,
-            // 指定开始页
-            // homepage: '_home.md',
-            //开启封面页，需要目录下有_coverpage.md文件
-            coverpage: true,
-            // 封面和内容单独显示
-            onlyCover: true,
-            // 侧边栏左侧的logo
-            logo: '',
-            // 侧边栏顶部的标题
-            name: 'timis~',
-            // 点击标题后的跳转地址
-            nameLink: '#',
-            // 禁用emoji
-            noEmoji: true,
-            // 移动设备合并导航栏到侧边栏
-            // mergeNavbar: true,
-            // 加载_404.md
-            notFoundPage: true,
-            // 滚动到锚点是与顶部的距离
-            topMargin: 90,
-            //插件设置
-            // -----------------------------------------------------
-            // 搜索配置
-            search: {
-                maxAge: 86400000,
-                paths: 'auto',
-                placeholder: '搜索',
-                noData: '找不到结果',
-                depth: 4,
-                hideOtherSidebarContent: false,
-                namespace: 'timis'
-            },
-            // 字数插件
-            count: {
-                countable: true,
-                position: 'top',
-                margin: '10px',
-                float: 'right',
-                fontsize: '0.9em',
-                color: 'rgb(90,90,90)',
-                language: 'chinese',
-                localization: {
-                    words: "",
-                    minute: ""
-                },
-                isExpected: true
-            },
-            // 分页导航插件
-            pagination: {
-                previousText: '上一章节',
-                nextText: '下一章节',
-                crossChapter: true,
-                crossChapterText: true
-            },
-            // 文本高亮
-            'flexible-alerts': {
-                style: 'flat',
-                note: {
-                    label: "信息"
-                },
-                tip: {
-                    label: "提示"
-                },
-                warning: {
-                    label: "注意"
-                },
-                attention: {
-                    label: "切记"
-                }
-            },
-            sidebarDisplayLevel: 2,
-            // 页脚信息插件
-            loadFooter: true,
-            loadFooter: '_footer.md',
-            // 自动为每个页面增加标题
-            loadSidebar: true,
-            autoHeader: true,
-            // 代码复制 (defaults)
-            copyCode: {
-                buttonText: 'Copy Code',
-                errorText: 'Error',
-                successText: 'Copied',
-            },
-            tabs: {
-                persist: true, // default
-                sync: true, // default
-                theme: 'classic', // default
-                tabComments: true, // default
-                tabHeadings: true // default
-            },
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宠物连连看小游戏</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
-    </script>
-    <!-- Docsify v4 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-    <!-- docsify的js依赖 --,启用了之后会重新生成一个搜索框> -->
-    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
-    <!-- 修改主题插件  -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-dark-switch/dist/docsify-dark-switch.min.js"></script>
-    <!-- 搜索 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-    <!-- 图片放大缩小支持 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-    <!-- 字数插件 -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
-    <!-- 分页导航 -->
-    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-    <!-- 文本高亮 -->
-    <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
-    <!-- 侧边栏扩展与折叠 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-    <!-- 页脚信息 -->
-    <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
-    <!-- 代码复制功能 (not recommended for production) -->
-    <script src="https://unpkg.com/docsify-copy-code"></script>
-    <!-- docsify-tabs实现标签功能 (latest v1.x.x) -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 100px);
+            grid-gap: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .card img {
+            width: 80px;
+            height: 80px;
+            display: none;
+        }
+        .card.flipped img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="gameBoard"></div>
+
     <script>
-        // title_id需要初始化
-        // window.title_id = window.location.hash.match(/#(.*?)([?]|$)/) ? window.location.hash.match(/#(.*?)([?]|$)/)[1] : '/';
-        var title = location.pathname.substr(0, 50);
-        const gitalk = new Gitalk({
-            clientID: '56b1f81f70f5020faf84',
-            clientSecret: '2ff39ba0699d9bc87e0ac5c48550fb0f38c628e0',
-            repo: 'zhanghanjiao-blogs',
-            owner: 'zhanghanjiao-timis',
-            admin: ['zhanghanjiao-timis'],
-            distractionFreeMode: false,
-            title: `Document comment ${location.hash.match(/#(.*?)([?]|$)/)[1]}`,
-            id: title
-        })
+        const images = [
+            '🐶', '🐱', '🐭', '🐹', '🐰', '🦊',
+            '🐻', '🐼', '🐨', '🐯', '🦁', '🐮'
+        ];
+
+        let cards = [...images, ...images];
+        cards.sort(() => 0.5 - Math.random());
+
+        const gameBoard = document.getElementById('gameBoard');
+        let flippedCards = [];
+        let matchedPairs = 0;
+
+        cards.forEach((image, index) => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.dataset.index = index;
+            card.innerHTML = `<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='18'>${image}</text></svg>" alt="Pet Image">`;
+            gameBoard.appendChild(card);
+
+            card.addEventListener('click', () => {
+                if (card.classList.contains('flipped') || flippedCards.length === 2) return;
+                card.classList.add('flipped');
+                flippedCards.push(card);
+
+                if (flippedCards.length === 2) {
+                    if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) {
+                        matchedPairs++;
+                        flippedCards = [];
+                        if (matchedPairs === images.length) {
+                            alert('恭喜你！你赢了！');
+                        }
+                    } else {
+                        setTimeout(() => {
+                            flippedCards.forEach(card => card.classList.remove('flipped'));
+                            flippedCards = [];
+                        }, 1000);
+                    }
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
