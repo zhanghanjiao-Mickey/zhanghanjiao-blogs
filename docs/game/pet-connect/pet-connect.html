@@ -1,57 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>小游戏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宠物连连看小游戏</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
-        #gameCanvas {
-            border: 1px solid #000;
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 100px);
+            grid-gap: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .card img {
+            width: 80px;
+            height: 80px;
+            display: none;
+        }
+        .card.flipped img {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <div class="container" id="gameBoard"></div>
+
     <script>
-        // 在这里添加您的游戏逻辑和 JavaScript 代码
-        const canvas = document.getElementById('gameCanvas');
-        const context = canvas.getContext('2d');
+        console.log('zhjlog');
+        const images = [
+            '🐶', '🐱', '🐭', '🐹', '🐰', '🦊',
+            '🐻', '🐼', '🐨', '🐯', '🦁', '🐮'
+        ];
 
-        let x = canvas.width / 2;
-        let y = canvas.height - 30;
-        let dx = 2;
-        let dy = -2;
-        let ballRadius = 10;
+        let cards = [...images, ...images];
+        cards.sort(() => 0.5 - Math.random());
 
-        function drawBall() {
-            context.beginPath();
-            context.arc(x, y, ballRadius, 0, Math.PI * 2);
-            context.fillStyle = "#0095DD";
-            context.fill();
-            context.closePath();
-        }
+        const gameBoard = document.getElementById('gameBoard');
+        let flippedCards = [];
+        let matchedPairs = 0;
 
-        function draw() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            drawBall();
-            if(x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-                dx = -dx;
-            }
-            if(y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
-                dy = -dy;
-            }
-            x += dx;
-            y += dy;
-        }
+        cards.forEach((image, index) => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.dataset.index = index;
+            card.innerHTML = `<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='18'>${image}</text></svg>" alt="Pet Image">`;
+            gameBoard.appendChild(card);
 
-        setInterval(draw, 10);
+            card.addEventListener('click', () => {
+                if (card.classList.contains('flipped') || flippedCards.length === 2) return;
+                card.classList.add('flipped');
+                flippedCards.push(card);
+
+                if (flippedCards.length === 2) {
+                    if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) {
+                        matchedPairs++;
+                        flippedCards = [];
+                        if (matchedPairs === images.length) {
+                            alert('恭喜你！你赢了！');
+                        }
+                    } else {
+                        setTimeout(() => {
+                            flippedCards.forEach(card => card.classList.remove('flipped'));
+                            flippedCards = [];
+                        }, 1000);
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
